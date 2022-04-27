@@ -24,15 +24,15 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotNull(message = "O atributo Nome é Obrigatório!")
+	@NotNull
 	private String nome;
 
-	@NotNull(message = "O atributo Usuário é Obrigatório!")
-	@Email(message = "O atributo Usuário deve ser um email válido!")
+	@NotNull
+	@Email
 	private String usuario;
 
-	@NotBlank(message = "O atributo Senha é Obrigatório!")
-	@Size(min = 8, message = "A Senha deve ter no mínimo 8 caracteres")
+	@NotBlank
+	@Size(min = 8)
 	private String senha;
 
 	private String foto;
@@ -42,7 +42,7 @@ public class Usuario {
 	private List<Postagem> postagem;
 
 	/** Métodos Construtores */
-	
+
 	public Usuario(Long id, String nome, String usuario, String senha, String foto) {
 		this.id = id;
 		this.nome = nome;
@@ -51,7 +51,8 @@ public class Usuario {
 		this.foto = foto;
 	}
 
-	public Usuario() {	}
+	public Usuario() {
+	}
 
 	public Long getId() {
 		return id;
